@@ -49,6 +49,5 @@
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
     <gap:plugin name="com.phonegap.plugins.barcodescanner" />
     <gap:plugin name="com.adobe.plugins.gaplugin" />
-    <access origin="http://127.0.0.1*" />
-    <access origin="http://64.186.38.68*" />
+    <access origin="*" />
 </widget>
