@@ -4,9 +4,7 @@ $(document).ready(function() {
         alert('Function disabled in demo.');
     });
 
-
     window.addEventListener("orientationchange", updateOrientation);
-
 });
 
 
@@ -39,7 +37,8 @@ function scan() {
                 "Format: " + result.format + "\n" +
                 "Cancelled: " + result.cancelled);
 			*/
-			window.location='http://64.186.38.68:3010/ccda';
+
+            window.open('http://64.186.38.68:3010/ccda', '_self', 'location=yes');
         },
         function(error) {
             alert("Scanning failed: " + error);
