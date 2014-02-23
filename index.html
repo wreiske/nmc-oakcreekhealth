@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html class="page-code start-trans">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=1">
+    <title>NMC Mobile</title>
+    <link rel="stylesheet" href="style.styl.css">
+</head>
+
+<body>
+
+    <div id="pageWrap">
+        <div id="toolbar">
+            <h1 id="toolbarTitle"></h1>
+        </div>
+        <div id="toolbarSpacer"></div>
+        <div id="pageBlock">
+            <div class="logo">
+                <div>
+                    <img height="9" src="welcometo-dark.svg">
+                </div>
+                <div>
+                    <img height="56" src="logo-white.svg">
+                </div>
+            </div>
+            <div class="buttonWrap">
+                <button class="bigButton" onclick="scan();">
+                    <img height="64" src="qrcode.svg" width="64">
+                </button>
+            </div>
+            <div class="buttonWrap">
+                <button class="bigButton" onclick="alert('WILL!')">
+                    ENTER
+                    <br>PICK-UP
+                    <br>CODE
+                </button>
+            </div>
+            <a class="demo" href="#" id="scanFooter">
+			Already have a NoMoreClipboard account? <span class="b">Log in here.</span>
+		</a>
+        </div>
+    </div>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="page.js"></script>
+    <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+    app.initialize();
+    </script>
+</body>
+
+</html>
