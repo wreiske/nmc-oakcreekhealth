@@ -37,8 +37,17 @@ function scan() {
                 "Format: " + result.format + "\n" +
                 "Cancelled: " + result.cancelled);
 			*/
-
-            window.open('http://64.186.38.68:3010/ccda', '_self', 'location=yes');
+            var jqxhr = $.ajax("https://dev.nomoreclipboard.com/mobile/check.php?qrcode=" + result.text)
+                .done(function(data) {
+                    if (data.pat_id != "") {
+                        window.open('http://64.186.38.68:3010/ccda#' + data.pat_id, '_self', 'location=yes');
+                    } else {
+                        alert('Invalid promo code.');
+                    }
+                })
+                .fail(function() {
+                    alert("Unable to check promo code. Check your network connection and try again.");
+                });
         },
         function(error) {
             alert("Scanning failed: " + error);
