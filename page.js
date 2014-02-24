@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('.demo').click(function(e) {
         e.preventDefault();
-        window.open('http://64.186.38.68:3010/code/enter', '_self', 'location=yes');
+        alert('Function disabled in demo.');
     });
 
     window.addEventListener("orientationchange", updateOrientation);
