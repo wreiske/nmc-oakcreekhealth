@@ -46,7 +46,7 @@ function scan() {
                     }
                 })
                 .fail(function() {
-                    alert("Unable to check promo code. Check your network connection and try again.");
+                    alert("Promo code is invalid or network unavailable.");
                 });
         },
         function(error) {
