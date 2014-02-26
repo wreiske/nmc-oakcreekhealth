@@ -1,10 +1,10 @@
 import os
-import json
-from progressbar import ProgressBar, Percentage, Bar
-
-
+from progressbar import ProgressBar, Percentage, Bar, ETA
 
 print "------------- Will's Image Converter --------------"
+print "Usage: convert.py"
+print "See files { } in convert.py"
+print "---------------------------------------------------"
 
 input_file = './icon.png'
 
@@ -24,20 +24,10 @@ files = {
 
 file_count = len(files)
 
-pbar = ProgressBar(widgets=[Percentage(), Bar()], maxval=file_count).start()
-
+pbar = ProgressBar(widgets=[Percentage(),' ', ETA(), ' ', Bar()], maxval=file_count)
 
 print "Total Images to Convert = %s" % (file_count+1)
 
-i = 0
-
-for x in files:
-	os.system("rm " + x)
-	os.system("convert " + input_file + " -resize " + files[x] + " " + x)
-	pbar.update(i+1)
-	i = i+1
-
-pbar.finish()
-    
-
-#os.system("convert logo.png -resize '96x96': '/Users/wreiske/nmc/nmc/www/res/icon/android/icon-96-xhdpi.png'");
+for f,s in pbar(files.items()):
+	os.system("rm " + f)
+	os.system("convert " + input_file + " -resize " + s + " " + f)
